@@ -1,3 +1,113 @@
+.title {
+  font-family: "fantasy", "Copperplate Gothic Bold";
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-color: yellow;
+  border-width: 10px;
+  border-style: double;
+  color: yellow;
+}
+.type-icons {
+
+}
+.card-container {
+
+}
+.random {
+
+}
+.add {
+
+}
+.remove {
+
+}
+.card-view {
+
+}
+.card {
+
+}
+.topcard {
+
+}
+.namebox {
+  display: flex;
+  justify-content: center;
+
+}
+.hp {
+  display: flex;
+  justify-content: center;
+}
+
+.pic-container {
+
+}
+.pokemon-img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 300px;
+  width: 300px;
+
+}
+.atkcard {
+
+}
+.skill1 {
+
+}
+.energy1 {
+
+}
+.dmg1 {
+
+}
+.skill2 {
+
+}
+.energy2 {
+
+}
+.dmg2 {
+
+}
+.infocard {
+
+}
+.infotext {
+
+}
+.weak {
+
+}
+.res {
+
+}
+.retreat {
+
+}
+.infoicon {
+
+}
+.iconweak {
+
+}
+.iconres {
+
+             }
+.iconretreat {
+
+}
+
+.pikachu-icon {
+  height: 100px;
+  width: 100px;
+}
 .shiny {
   display: none;
   opacity: 0.5;
@@ -5,4 +115,9 @@
 .shiny:hover {
   display: block;
   opacity: 1.0;
+}
+
+.mini {
+  height: 15px;
+  width: 15px;
 }
