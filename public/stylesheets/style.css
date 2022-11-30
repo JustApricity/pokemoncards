@@ -1,6 +1,7 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
 .title {
-  font-family: "fantasy", "Copperplate Gothic Bold";
-  font-size: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +15,8 @@
 
 }
 .card-container {
-
+  background-color: yellow;
+  padding: 40px;
 }
 .random {
 
@@ -26,96 +28,74 @@
 
 }
 .card-view {
-
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+/*change this css for later*/
 .card {
-
+  background-color: red;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid darkred;
 }
 .topcard {
 
 }
 .namebox {
   display: flex;
-  justify-content: center;
-
+  justify-content: space-evenly;
+  align-items: center;
 }
-.hp {
-  display: flex;
-  justify-content: center;
-}
-
 .pic-container {
-
+  border-color: darkred;
+  border-style: solid;
 }
+
 .pokemon-img {
-  display: flex;
-  justify-content: center;
-  align-content: center;
   height: 300px;
-  width: 300px;
-
+  width: 250px;
 }
-.atkcard {
 
-}
 .skill1 {
-
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom-color: darkred;
+  border-bottom-style: solid;
 }
-.energy1 {
 
-}
-.dmg1 {
-
-}
 .skill2 {
-
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom-color: darkred;
+  border-bottom-style: solid;
 }
-.energy2 {
 
-}
-.dmg2 {
-
-}
 .infocard {
-
-}
-.infotext {
-
-}
-.weak {
-
-}
-.res {
-
-}
-.retreat {
-
-}
-.infoicon {
-
-}
-.iconweak {
-
-}
-.iconres {
-
-             }
-.iconretreat {
-
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: stretch;
 }
 
 .pikachu-icon {
   height: 100px;
   width: 100px;
 }
-.shiny {
-  display: none;
-  opacity: 0.5;
-}
-.shiny:hover {
-  display: block;
-  opacity: 1.0;
-}
+/*sorry I had to scrap you but this was too difficult and I want to finish this project. RIP shiny 11/30/2022 */
+/*.shiny {*/
+/*  opacity: 0.5;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-evenly;*/
+/*  height: 300px;*/
+/*  width: 250px;*/
+/*}*/
+/*.shiny:hover {*/
+/*  display: block;*/
+/*  opacity: 1.0;*/
+/*}*/
 
 .mini {
   height: 15px;
