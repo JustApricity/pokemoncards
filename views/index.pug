@@ -16,33 +16,37 @@ block content
       div.card-view
         div.card
           div.namebox
-            p Houndoom EX
-            p 170
-            img.mini(src='/images/fire.png')
+            p #{card.name}
+            p #{card.hp}
+            img.mini(src=`${card.type}`)
           div.pic-container
               img.pokemon-img(src='https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp')
           div.atkcard
             div.skill1
-              img.mini(src='/images/fire.png')
-              p Inferno Fang
-              p 80+
+              img.mini(src=`${card.moveCost1a}`)
+              img.mini(src=`${card.moveCost1a}`)
+              p #{card.moveName1}
+              p #{card.moveDMG1}
             div.skill2
-              img.mini(src='/images/fire.png')
-              p Vengeful Fang
-              p 100+
+              img.mini(src=`${card.moveCost1b}`)
+              img.mini(src=`${card.moveCost2b}`)
+              img.mini(src=`${card.moveCost3b}`)
+              p #{card.moveName2}
+              p #{card.moveDMG2}
           div.infocard
             div
-              p weakness
-              img.mini(src='/images/groun.png')
-              img.mini(src='/images/rock.png')
-              img.mini(src='images/water.png')
+              p.italic weakness
+              img.mini(src=`${card.Weak1}`)
+              img.mini(src=`${card.Weak2}`)
+              img.mini(src=`${card.Weak3}`)
             div
-              p resistance
-              img.mini(src='images/fire.png')
-              img.mini(src='images/bug.png')
-              img.mini(src='images/steel.png')
+              p.italic resistance
+              img.mini(src=`${card.Res1}`)
+              img.mini(src=`${card.Res2}`)
+              img.mini(src=`${card.Res3}`)
             div
-              p retreat cost
-              img.mini(src='/images/normal.png')
+              p.italic retreat cost
+              img.mini(src=`${card.RetreatCost1}`)
+              img.mini(src=`${card.RetreatCost2}`)
           // goodbye shiny you will be missed :(
           //img.shiny(src='https://media.istockphoto.com/id/1077626348/photo/silver-glitter-texture-white-sparkling-shiny-wrapping-paper-background-for-christmas-holiday.jpg?b=1&s=170667a&w=0&k=20&c=NHFBwdwfUwKRAXoDIVekY22Mhwi8isTj9dI9a37KnKk=')
