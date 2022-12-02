@@ -1,0 +1,36 @@
+mixin pokemonCard(card)
+
+    div.card
+        div.namebox
+            p #{card.name}
+            p #{card.hp}
+            img.mini(src=`${card.type}`)
+        div.pic-container
+            img.pokemon-img(src=`${card.image}`)
+        div.atkcard
+            div.skill1
+                img.mini(src=`${card.moveCost1a}`)
+                img.mini(src=`${card.moveCost1a}`)
+                p #{card.moveName1}
+                p #{card.moveDMG1}
+            div.skill2
+                img.mini(src=`${card.moveCost1b}`)
+                img.mini(src=`${card.moveCost2b}`)
+                img.mini(src=`${card.moveCost3b}`)
+                p #{card.moveName2}
+                p #{card.moveDMG2}
+        div.infocard
+            div
+                p.italic weakness
+                img.mini(src=`${card.Weak1}`)
+                img.mini(src=`${card.Weak2}`)
+                img.mini(src=`${card.Weak3}`)
+            div
+                p.italic resistance
+                img.mini(src=`${card.Res1}`)
+                img.mini(src=`${card.Res2}`)
+                img.mini(src=`${card.Res3}`)
+            div
+                p.italic retreat cost
+                img.mini(src=`${card.RetreatCost1}`)
+                img.mini(src=`${card.RetreatCost2}`)

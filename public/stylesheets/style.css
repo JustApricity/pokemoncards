@@ -107,6 +107,57 @@ body {
   font-size: 14px;
 }
 
-.card{
+.card.normal {
+
+}
+.card.fighting {
+
+}
+.card.flying {
+
+}
+card.poison {
+
+}
+card.ground {
+
+}
+card.rock {
+
+}
+card.bug {
+
+}
+card.ghost {
+
+}
+card.steel {
+
+}
+card.fire {
+
+}
+card.water {
+
+}
+card.grass {
+
+}
+card.electric {
+
+}
+card.psychic {
+
+}
+card.ice {
+
+}
+card.dragon {
+
+}
+card.dark {
+
+}
+card.fairy {
 
 }
