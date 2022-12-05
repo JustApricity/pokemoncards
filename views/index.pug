@@ -8,12 +8,10 @@ block content
       img.pikachu-icon(src='https://www.freeiconspng.com/uploads/pikachu-png-icon-24.png')
     div.type-icons
     div.card-container
-      div.random
-        button Random
-      div.add
-        button Add
-      div.remove
-        button Remove
+      div.buttonrow
+        button.buttons Random
+        button.buttons Add
+        button.buttons Remove
       div.card-view
         each card in cards
           +pokemonCard(card)

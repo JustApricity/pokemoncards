@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    div.form-panel
+        div.header
+            form(action=`/edit/${card.id}` method='post')
+                div.form-input
+                    label(for='name') Name:
+                    input(type='type' id='name' value=card.name)
+                div.form-input
+                    label(for='type') Type
+                    select(id='type' name='type' autocomplete='off')
+                        each type in types
+                            option(value=type selected = (type ===card.type)) #{type}
+                div.form-input
+                    label(for='hp') Hp
+                    select(id='hp' name='hp')

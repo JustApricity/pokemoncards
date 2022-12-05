@@ -1,9 +1,10 @@
 mixin pokemonCard(card)
 
-    div.card
+    div.card.dark
         div.namebox
             p #{card.name}
             p #{card.hp}
+            button.buttonedit edit
             img.mini(src=`${card.type}`)
         div.pic-container
             img.pokemon-img(src=`${card.image}`)
