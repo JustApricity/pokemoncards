@@ -1,7 +1,14 @@
-const {card} = require('../models')
+const {Pokemon} = require('../models')
+let types = ['bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'gross', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
 module.exports.viewAll = async function(req, res, next) {
-    const cards = await card.findAll();
-    res.render('index', {cards});
+    const cards = await Pokemon.findAll();
+    res.render('index', {cards, types});
+}
+module.exports.renderEditForm = async function(req, res, render) {
+    const card = await Pokemon.findByPk(
+        req.params.id
+    );
+    res.render('edit', {card, types});
 }
 // module.exports.viewAll = function(req, res, next) {
 //     const cards =[ {
@@ -58,4 +65,4 @@ module.exports.viewAll = async function(req, res, next) {
 //     }];
 //     res.render('index', {cards});
 //
-// }
+//

@@ -14,4 +14,38 @@ block content
                             option(value=type selected = (type ===card.type)) #{type}
                 div.form-input
                     label(for='hp') Hp
-                    select(id='hp' name='hp')
+                    input(id='hp' name='hp')
+                div.form-input
+                    label(for='firstMove') First Move:
+                    input(id='firstmove' name='firstmove')
+                div.form-input
+                    p First Move Cost:
+                    select(id='firstCosta' name='firstCosta' autocomplete='off')
+                        each type in types
+                            option(value=type selected = (type === card.type)) #{type}
+                    select(id='firstCostb' name='firstCostb' autocomplete='off')
+                        each type in types
+                            option(value=type selected = (type === card.type)) #{type}
+                    select(id='firstCostc' name='firstCostc' autocomplete='off')
+                        each type in types
+                            option(value=type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='firstDMG') First Move Damage:
+                    input(id='firstDMG' name='firstDMG')
+                div.form-input
+                    label(for='secondMove') Second Move:
+                    input(id='secondMove' name='secondMove')
+                div.form-input
+                    p First Move Cost:
+                        select(id='firstCosta' name='firstCosta' autocomplete='off')
+                            each type in types
+                                option(value=type selected = (type === card.type)) #{type}
+                        select(id='firstCostb' name='firstCostb' autocomplete='off')
+                            each type in types
+                                option(value=type selected = (type === card.type)) #{type}
+                        select(id='firstCostc' name='firstCostc' autocomplete='off')
+                            each type in types
+                                option(value=type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='secondDMG') Second Move Damage:
+                    input(id='secondDMG' name='secondDMG')
