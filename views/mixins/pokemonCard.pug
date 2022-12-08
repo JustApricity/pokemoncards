@@ -1,6 +1,6 @@
 mixin pokemonCard(card)
 
-    div.card.dark
+    div(class=`card ${card.type}`)
         div.namebox
             p #{card.name}
             p #{card.hp}

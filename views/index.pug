@@ -9,9 +9,7 @@ block content
     div.type-icons
     div.card-container
       div.buttonrow
-        button.buttons Random
-        button.buttons Add
-        button.buttons Remove
+        a.button.save(href="/add") Add Card
       div.card-view
         each card in cards
           +pokemonCard(card)
