@@ -1,8 +1,13 @@
 const {Pokemon} = require('../models')
-let types = ['', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'gross', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
+let types = ['', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
 module.exports.viewAll = async function(req, res, next) {
     const cards = await Pokemon.findAll();
-    res.render('index', {cards, types});
+    let searchType = 'All';
+    let searchTypes = ['All'];
+    for (let i = 0; i<types.length; i++){
+        searchTypes.push(types[i]);
+    }
+    res.render('index', {Pokemon, cards:searchTypes, searchType});
 }
 module.exports.renderEditForm = async function(req, res, render) {
     const card = await Pokemon.findByPk(
