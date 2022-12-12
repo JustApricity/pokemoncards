@@ -10,15 +10,18 @@ block content
       div.filter-container
         form(action='/' method='get')
           div.form-input
-            label(for='type') Type
-            select(id='type' name='type' autocomplete='off')
-              each type in types
-                option(value=type selected = (type === searchType)) #{type}
+            label(for='types') Type
+            select(id='types' name='types' autocomplete='off')
+              each card in types
+                option(value=card selected = (card === searchType)) #{card}
+          div.form-input
+            label(for='random') Random
+            input(type='checkbox' name='random' id='random' checked='searchRandom')
           button.button.save(type='submit') Filter
       div.buttonrow
         a.button.save(href="/add") Add Card
       div.card-view
-        each card in cards
+        each card in search
           +pokemonCard(card)
 
           // goodbye shiny you will be missed :(

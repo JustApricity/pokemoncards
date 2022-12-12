@@ -1,13 +1,37 @@
 const {Pokemon} = require('../models')
 let types = ['', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
-module.exports.viewAll = async function(req, res, next) {
-    const cards = await Pokemon.findAll();
-    let searchType = 'All';
-    let searchTypes = ['All'];
-    for (let i = 0; i<types.length; i++){
+cardClass: getCardClass(req.body.type);
+function getCardClass(types) {
+    if(types === 'bug') {
+        return 'bug'
+    } else if (types === 'dark'){
+        return === 'dark'
+}
+module.exports.viewCards = async function(req, res) {
+    let searchTypes = ['all']
+    for (let i = 0; i < types.length; i++) {
         searchTypes.push(types[i]);
     }
-    res.render('index', {Pokemon, cards:searchTypes, searchType});
+    let search
+    let searchType = req.query.type || 'all';
+    let searchRandom = req.query.random || false;
+    if (searchType === 'all') {
+        search = await Pokemon.findAll();
+    } else {
+        search = await Pokemon.findAll( {
+          where: {
+              type: searchType
+          }
+        });
+    }
+    if (search.length > 0 && searchRandom) {
+        let randomIndex = getRandomInt(search.length);
+        search = [search[randomIndex]];
+    }
+    res.render('index', {search, types:searchTypes, searchType, searchRandom});
+}
+function getRandomInt(max){
+    return Math.floor(Math.random() * max);
 }
 module.exports.renderEditForm = async function(req, res, render) {
     const card = await Pokemon.findByPk(
