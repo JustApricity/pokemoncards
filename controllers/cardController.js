@@ -1,12 +1,6 @@
 const {Pokemon} = require('../models')
-let types = ['', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
-cardClass: getCardClass(req.body.type);
-function getCardClass(types) {
-    if(types === 'bug') {
-        return 'bug'
-    } else if (types === 'dark'){
-        return === 'dark'
-}
+let types = ['none', 'bug', 'dark', 'dragon', 'electric', 'fairy', 'fighting', 'fire', 'fighting', 'ghost', 'grass', 'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water']
+// //    fix this and then display images
 module.exports.viewCards = async function(req, res) {
     let searchTypes = ['all']
     for (let i = 0; i < types.length; i++) {
@@ -44,27 +38,27 @@ module.exports.updateCard = async function(req, res) {
         {
             name: req.body.name,
             hp: req.body.hp,
-            type: `/images/${req.body.type}.png`,
+            type: req.body.type,
             image: req.body.image,
-            moveCost1a: `/images/${req.body.moveCost1a}.png`,
-            moveCost2a: `/images/${req.body.moveCost2a}.png`,
-            moveCost3a: `/images/${req.body.moveCost3a}.png`,
+            moveCost1a: req.body.moveCost1a,
+            moveCost2a: req.body.moveCost2a,
+            moveCost3a: req.body.moveCost3a,
             moveName1: req.body.moveName1,
             moveDMG1: req.body.moveDMG1,
-            moveCost1b: `/images/${req.body.moveCost1b}.png`,
-            moveCost2b: `/images/${req.body.moveCost2b}.png`,
-            moveCost3b: `/images/${req.body.moveCost3b}.png`,
+            moveCost1b: req.body.moveCost1b,
+            moveCost2b: req.body.moveCost2b,
+            moveCost3b: req.body.moveCost3b,
             moveName2: req.body.moveName2,
             moveDMG2: req.body.moveDMG2,
-            Weak1: `/images/${req.body.Weak1}.png`,
-            Weak2: `/images/${req.body.Weak2}.png`,
-            Weak3: `/images/${req.body.Weak3}.png`,
-            Res1: `/images/${req.body.Res1}.png`,
-            Res2: `/images/${req.body.Res2}.png`,
-            Res3: `/images/${req.body.Res3}.png`,
-            RetreatCost1: `/images/${req.body.RetreatCost1}.png`,
-            RetreatCost2: `/images/${req.body.RetreatCost2}.png`,
-            RetreatCost3: `/images/${req.body.RetreatCost3}.png`
+            Weak1: req.body.Weak1,
+            Weak2: req.body.Weak2,
+            Weak3: req.body.Weak3,
+            Res1: req.body.Res1,
+            Res2: req.body.Res2,
+            Res3: req.body.Res3,
+            RetreatCost1: req.body.RetreatCost1,
+            RetreatCost2: req.body.RetreatCost2,
+            RetreatCost3: req.body.RetreatCost3
         },
         {
             where:
@@ -78,7 +72,7 @@ module.exports.updateCard = async function(req, res) {
 }
 
 module.exports.deleteCard = async function(req, res) {
-    await card.destroy(
+    await Pokemon.destroy(
         {
             where:
                 {
@@ -93,7 +87,7 @@ module.exports.renderAddForm = function(req, res){
     const card = {
         name: "",
         hp: "",
-        type: "",
+        type: types[0],
         image: "",
         moveCost1a: "",
         moveCost2a: "",
@@ -123,7 +117,7 @@ module.exports.addCard = async function(req, res) {
         {
             name: req.body.name,
             hp: req.body.hp,
-            type: `/images/${req.body.type}.png`,
+            type: req.body.type,
             image: req.body.image,
             moveCost1a: `/images/${req.body.moveCost1a}.png`,
             moveCost2a: `/images/${req.body.moveCost2a}.png`,
@@ -135,43 +129,24 @@ module.exports.addCard = async function(req, res) {
             moveCost3b: `/images/${req.body.moveCost3b}.png`,
             moveName2: req.body.moveName2,
             moveDMG2: req.body.moveDMG2,
-            Weak1: `/images/${req.body.Weak1}.png`,
-            Weak2: `/images/${req.body.Weak2}.png`,
-            Weak3: `/images/${req.body.Weak3}.png`,
-            Res1: `/images/${req.body.Res1}.png`,
-            Res2: `/images/${req.body.Res2}.png`,
-            Res3: `/images/${req.body.Res3}.png`,
-            RetreatCost1: `/images/${req.body.RetreatCost1}.png`,
-            RetreatCost2: `/images/${req.body.RetreatCost2}.png`,
-            RetreatCost3: `/images/${req.body.RetreatCost3}.png`
+            Weak1: checkNull(`/images/${req.body.Weak1}.png`),
+            Weak2: checkNull(`/images/${req.body.Weak2}.png`),
+            Weak3: checkNull(`/images/${req.body.Weak3}.png`),
+            Res1: checkNull(`/images/${req.body.Res1}.png`),
+            Res2: checkNull(`/images/${req.body.Res2}.png`),
+            Res3: checkNull(`/images/${req.body.Res3}.png`),
+            RetreatCost1: checkNull(`/images/${req.body.RetreatCost1}.png`),
+            RetreatCost2: checkNull(`/images/${req.body.RetreatCost2}.png`),
+            RetreatCost3: checkNull(`/images/${req.body.RetreatCost3}.png`)
         });
     console.log(newPokemon)
     res.redirect('/')
 }
-// module.exports.viewAll = function(req, res, next) {
-//     const cards =[ {
-//         id: 1,
-//         name: 'Houndoom',
-//         hp: 170,
-//         type: '/images/fire.png',
-//         image: 'https://static.pokemonpets.com/images/monsters-images-800-800/8229-Mega-Houndoom.webp',
-//         moveCost1a: '/images/fire.png',
-//         moveCost2a: '/images/fire.png',
-//         moveCost3a: '',
-//         moveName1: 'Inferno Fang',
-//         moveDMG1: 80,
-//         moveCost1b: '/images/fire.png',
-//         moveCost2b: '/images/fire.png',
-//         moveCost3b: '/images/normal.png',
-//         moveName2: 'Vengeful Fang',
-//         moveDMG2: 100,
-//         Weak1: '/images/ground.png',
-//         Weak2: '/images/rock.png',
-//         Weak3: '/images/water.png',
-//         Res1: '/images/fire.png',
-//         Res2: '/images/bug.png',
-//         Res3: '/images/steel.png',
-//         RetreatCost1: '/images/normal.png',
-//         RetreatCost2: '/images/normal.png',
-//         RetreatCost3: '',
-//     },
+
+function checkNull(input) {
+    if (input == 'none') {
+        return null
+    } else {
+        return input
+    }
+}

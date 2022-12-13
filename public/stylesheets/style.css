@@ -265,3 +265,8 @@ body {
   color: darkred;
   text-decoration: none;
 }
+
+.filter-container {
+  background-color: red;
+  padding: 10px;
+}

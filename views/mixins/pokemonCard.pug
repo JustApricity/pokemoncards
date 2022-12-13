@@ -1,11 +1,11 @@
 mixin pokemonCard(card)
 
-    div(class=`card ${cardClass}`)
+    div(class=`card ${card.type}`)
         div.namebox
             p #{card.name}
             p #{card.hp}
             a(href=`/edit/${card.id}`) edit
-            img.mini(src=`${card.type}`)
+            img.mini(src=`/images/${card.type}.png`)
         div.pic-container
             img.pokemon-img(src=`${card.image}`)
         div.atkcard
