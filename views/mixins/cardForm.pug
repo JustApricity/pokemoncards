@@ -7,69 +7,69 @@ mixin cardForm(card, actionURL, mode, title)
                     input(id='name' name='name' value=card.name)
                 div.form-input
                     label(for='type') Type
-                    select(id='type' name='type' autocomplete='off')
+                    select(id='type' name='type' autocomplete='off' value=card.type)
                         each type in types
                             option(value=type selected = (type ===card.type)) #{type}
                 div.form-input
                     label(for='image') Image:
-                    input(id='image' name='image')
+                    input(id='image' name='image' value=card.image)
                 div.form-input
                     label(for='hp') Hp
-                    input(id='hp' name='hp')
+                    input(id='hp' name='hp' value=card.hp)
                 div.form-input
                     label(for='moveName1') First Move:
-                    input(id='moveName1' name='moveName1')
+                    input(id='moveName1' name='moveName1' value=card.moveName1)
                 div.form-input
                     p First Move Cost:
-                        select(id='moveCost1a' name='moveCost1a' autocomplete='off')
+                        select(id='moveCost1a' name='moveCost1a' autocomplete='off' value=card.moveCost1a)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='moveCost2a' name='moveCost2a' autocomplete='off')
+                        select(id='moveCost2a' name='moveCost2a' autocomplete='off' value=card.moveCost2a)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='moveCost3a' name='moveCost3a' autocomplete='off')
+                        select(id='moveCost3a' name='moveCost3a' autocomplete='off' value=card.moveCost3a)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
                 div.form-input
                     label(for='moveDMG1') First Move Damage:
-                    input(id='moveDMG1' name='moveDMG1')
+                    input(id='moveDMG1' name='moveDMG1' value=card.moveDMG1)
                 div.form-input
                     label(for='moveName2') Second Move:
-                    input(id='moveName2' name='moveName2')
+                    input(id='moveName2' name='moveName2' value=card.moveName2)
                 div.form-input
                     p Second Move Cost:
-                        select(id='moveCost1b' name='moveCost1b' autocomplete='off')
+                        select(id='moveCost1b' name='moveCost1b' autocomplete='off' value=card.moveCost1b)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='moveCost2b' name='moveCost2b' autocomplete='off')
+                        select(id='moveCost2b' name='moveCost2b' autocomplete='off' value=card.moveCost2b)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='moveCost3b' name='moveCost3b' autocomplete='off')
+                        select(id='moveCost3b' name='moveCost3b' autocomplete='off' value=card.moveCost3b)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
                 div.form-input
                     label(for='moveDMG2') Second Move Damage:
-                    input(id='moveDMG2' name='moveDMG2')
+                    input(id='moveDMG2' name='moveDMG2' value=card.moveDMG2)
                 div.form-input
                     p Weak To:
-                        select(id='Weak1' name='Weak1' autocomplete='off')
+                        select(id='Weak1' name='Weak1' autocomplete='off' value=card.Weak1)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='Weak2' name='Weak2' autocomplete='off')
+                        select(id='Weak2' name='Weak2' autocomplete='off' value=card.Weak2)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='Weak3' name='Weak3' autocomplete='off')
+                        select(id='Weak3' name='Weak3' autocomplete='off' value=card.Weak3)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
                 div.form-input
                     p Resistant To:
-                        select(id='Res1' name='Res1' autocomplete='off')
+                        select(id='Res1' name='Res1' autocomplete='off' value=card.Res1)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='Res2' name='Res2' autocomplete='off')
+                        select(id='Res2' name='Res2' autocomplete='off' value=card.Res2)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
-                        select(id='Res3' name='Res3' autocomplete='off')
+                        select(id='Res3' name='Res3' autocomplete='off' value=card.Res3)
                             each type in types
                                 option(value=type selected = (type === card.type)) #{type}
                 div.form-input

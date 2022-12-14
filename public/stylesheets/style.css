@@ -1,6 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
-  background-image: url("/images/forest-bg.jpg");
+  background: rgb(231,35,36);
+  background: linear-gradient(90deg, rgba(231,35,36,1) 0%, rgba(251,160,160,1) 50%, rgba(231,35,36,1) 100%);
 }
 .title {
   display: flex;
@@ -21,6 +22,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 /*change this css for later*/
 .card {
@@ -28,6 +30,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   border: 2px solid darkred;
+  margin: 15px;
 }
 .topcard {
 
@@ -233,6 +236,13 @@ body {
   color: lightgoldenrodyellow;
   border: 5px red solid;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-input {
+  margin: 5px 0;
 }
 
 .submit-row {
@@ -269,4 +279,21 @@ body {
 .filter-container {
   background-color: red;
   padding: 10px;
+  display: flex;
+  width: 7%;
+  border: darkred 3px solid;
+  color: yellow;
+  justify-content: space-evenly;
+}
+
+.filterme {
+  background-color: white;
+  color: red;
+  border: 2px solid darkred;
+}
+
+.form-panel {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
 }
